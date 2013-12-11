@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Amp_Advanced</class>
+ <widget class="QDialog" name="Amp_Advanced">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>413</width>
+    <height>303</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Advanced Settings</string>
+  </property>
+  <property name="accessibleName">
+   <string>Amplifier's advanced settings window</string>
+  </property>
+  <property name="accessibleDescription">
+   <string>Allows you to set some advanced options of the amplifier</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Cabinet:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>comboBox</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <property name="accessibleName">
+        <string>Cabinet</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Allows you to choose cabinet to simulate</string>
+       </property>
+       <property name="maxVisibleItems">
+        <number>13</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>57DLX</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>BSSMN</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>65DLX</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>65PRN</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CHAMP</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4x12M</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2x12C</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4x12G</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>65TWN</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4x12V</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SS212</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SS112</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&amp;Noise Gate:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>comboBox_2</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="accessibleName">
+        <string>Noise gate</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Allows you to choose noise gate settings</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Low</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mid</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>High</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Super</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Custom</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="accessibleName">
+        <string>Brightness</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Allows you to turn of/off brightness setting</string>
+       </property>
+       <property name="text">
+        <string>&amp;Brightness</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial">
+         <property name="accessibleName">
+          <string>Master volume dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose master volume level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox">
+         <property name="accessibleName">
+          <string>Master volume box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of master volume</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>&amp;Master Volume</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_2">
+         <property name="accessibleName">
+          <string>Gain 2 dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose gain 2 level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_2">
+         <property name="accessibleName">
+          <string>Gain 2 box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of gain 2</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>&amp;Gain 2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_2</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_3">
+         <property name="accessibleName">
+          <string>Presence dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose presence level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_3">
+         <property name="accessibleName">
+          <string>Presence box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of presence</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>&amp;Presence</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_3</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_6">
+         <property name="accessibleName">
+          <string>Bias dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose bias level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_6">
+         <property name="accessibleName">
+          <string>Bias box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of bias</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>&amp;Bias</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_6</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_7">
+         <property name="accessibleName">
+          <string>Sag dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose sag level</string>
+         </property>
+         <property name="maximum">
+          <number>2</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>1</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_7">
+         <property name="accessibleName">
+          <string>Sag box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of sag</string>
+         </property>
+         <property name="maximum">
+          <number>2</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>&amp;Sag</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_7</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="accessibleName">
+          <string>Threshold dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose threshold level</string>
+         </property>
+         <property name="maximum">
+          <number>9</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>1</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_5">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="accessibleName">
+          <string>Threshold box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of threshold</string>
+         </property>
+         <property name="maximum">
+          <number>9</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>&amp;Threshold</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_5</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="accessibleName">
+          <string>Depth dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose depth level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="accessibleName">
+          <string>Depth box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of depth</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>128</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>&amp;Depth</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_4</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QSlider" name="dial_8">
+         <property name="accessibleName">
+          <string>Bias dial</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to choose bias level</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBothSides</enum>
+         </property>
+         <property name="tickInterval">
+          <number>25</number>
+         </property>
+         <property name="notchTarget" stdset="0">
+          <double>12.750000000000000</double>
+         </property>
+         <property name="notchesVisible" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_8">
+         <property name="accessibleName">
+          <string>Bias box</string>
+         </property>
+         <property name="accessibleDescription">
+          <string>Allows you to precisely enter the level of bias</string>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>&amp;USB Gain</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>spinBox_8</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="accessibleName">
+        <string>OK</string>
+       </property>
+       <property name="accessibleDescription">
+        <string>Close window. You must press &quot;Set&quot; button in the amplifier's windows to send changes to the amplifier.</string>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="shortcut">
+        <string>Return, Esc</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>dial</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>dial_2</tabstop>
+  <tabstop>spinBox_2</tabstop>
+  <tabstop>dial_3</tabstop>
+  <tabstop>spinBox_3</tabstop>
+  <tabstop>dial_6</tabstop>
+  <tabstop>spinBox_6</tabstop>
+  <tabstop>dial_7</tabstop>
+  <tabstop>spinBox_7</tabstop>
+  <tabstop>dial_5</tabstop>
+  <tabstop>spinBox_5</tabstop>
+  <tabstop>dial_4</tabstop>
+  <tabstop>spinBox_4</tabstop>
+  <tabstop>dial_8</tabstop>
+  <tabstop>spinBox_8</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Amp_Advanced</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>407</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>52</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>79</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_4</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_4</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>276</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_5</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_5</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_6</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>406</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_6</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>406</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>406</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_7</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>101</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_7</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>101</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_8</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>361</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>365</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial_8</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

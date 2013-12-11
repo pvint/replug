@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PLUG</string>
+  </property>
+  <property name="accessibleName">
+   <string>Main window: NONE</string>
+  </property>
+  <property name="accessibleDescription">
+   <string>Main window containing menus and buttons to open amplifier's and effect's windows</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="accessibleName">
+    <string>Container with buttons</string>
+   </property>
+   <property name="accessibleDescription">
+    <string>This container holds buttons to open amplifier's and effect's windows</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="Amplifier">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="accessibleName">
+       <string>Amplifier</string>
+      </property>
+      <property name="accessibleDescription">
+       <string>This button opens window to set amplifier</string>
+      </property>
+      <property name="text">
+       <string>&amp;Amplifier</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="EffectButton1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="accessibleName">
+         <string>Effect 1</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>This button opens window to set effect 1</string>
+        </property>
+        <property name="text">
+         <string>Effect &amp;1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="EffectButton2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="accessibleName">
+         <string>Effect 2</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>This button opens window to set effect 2</string>
+        </property>
+        <property name="text">
+         <string>Effect &amp;2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="EffectButton3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="accessibleName">
+         <string>Effect 3</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>This button opens window to set effect 3</string>
+        </property>
+        <property name="text">
+         <string>Effect &amp;3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="EffectButton4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="accessibleName">
+         <string>Effect 4</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>This button opens window to set effect 4</string>
+        </property>
+        <property name="text">
+         <string>Effect &amp;4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>350</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>Menu bar</string>
+   </property>
+   <property name="accessibleDescription">
+    <string>Bar holding different menus</string>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="accessibleName">
+     <string>File menu</string>
+    </property>
+    <property name="accessibleDescription">
+     <string>Menu holding various options</string>
+    </property>
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionL_oad_from_file"/>
+    <addaction name="actionS_ave_to_file"/>
+    <addaction name="separator"/>
+    <addaction name="action_Load_from_amplifier"/>
+    <addaction name="actionSave_to_amplifier"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_effects"/>
+    <addaction name="action_Library_view"/>
+    <addaction name="separator"/>
+    <addaction name="action_Update_firmware"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="accessibleName">
+     <string>Help menu</string>
+    </property>
+    <property name="accessibleDescription">
+     <string>Menu holding help options</string>
+    </property>
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionCheck_for_Updates"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuConnection">
+    <property name="accessibleName">
+     <string>Connection menu</string>
+    </property>
+    <property name="accessibleDescription">
+     <string>Menu holding options to connect and disconnect from the device</string>
+    </property>
+    <property name="title">
+     <string>&amp;Connection</string>
+    </property>
+    <addaction name="actionConnect"/>
+    <addaction name="actionDisconnect"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="accessibleName">
+     <string>Settings menu</string>
+    </property>
+    <property name="accessibleDescription">
+     <string>Menu holding different settings</string>
+    </property>
+    <property name="title">
+     <string>&amp;Settings</string>
+    </property>
+    <addaction name="action_Quick_presets"/>
+    <addaction name="action_Default_effects"/>
+    <addaction name="action_Options"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuConnection"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="accessibleName">
+    <string>Status bar</string>
+   </property>
+   <property name="accessibleDescription">
+    <string>This bar display various notifications</string>
+   </property>
+  </widget>
+  <action name="actionExit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionConnect">
+   <property name="text">
+    <string>&amp;Connect</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Disconnect</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionSave_to_amplifier">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Save to amplifier</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="action_Load_from_amplifier">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Load from amplifier</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSave_effects">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save &amp;effects</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionCheck_for_Updates">
+   <property name="text">
+    <string>Check for &amp;Updates</string>
+   </property>
+  </action>
+  <action name="action_Options">
+   <property name="text">
+    <string>&amp;Options</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionL_oad_from_file">
+   <property name="text">
+    <string>L&amp;oad from file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionS_ave_to_file">
+   <property name="text">
+    <string>S&amp;ave to file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_Library_view">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Library view</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+L</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="action_Update_firmware">
+   <property name="text">
+    <string>&amp;Update firmware</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="action_Default_effects">
+   <property name="text">
+    <string>&amp;Default effects</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="action_Quick_presets">
+   <property name="text">
+    <string>Quick &amp;presets</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

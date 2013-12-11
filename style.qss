@@ -1,0 +1,6 @@
+#jogDial {
+    qproperty-backgroundImage: url(dial-back.png);
+    qproperty-needleImage: url(dial-pointer.png);
+    qproperty-maxAngle: 140;
+}
+

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SaveOnAmp</class>
+ <widget class="QMainWindow" name="SaveOnAmp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Save on Amplifier</string>
+  </property>
+  <property name="accessibleName">
+   <string>Save on amplifier window</string>
+  </property>
+  <property name="accessibleDescription">
+   <string>Allows you to set current settings on the amplifier</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>17</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>S&amp;lot:</string>
+        </property>
+        <property name="buddy">
+         <cstring>comboBox</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="accessibleName">
+         <string>Slot</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Select slot where current settings will be saved</string>
+        </property>
+        <property name="maxVisibleItems">
+         <number>20</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>&amp;Name:</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="accessibleName">
+         <string>Name</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Select name for your preset</string>
+        </property>
+        <property name="maxLength">
+         <number>31</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>18</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="accessibleName">
+         <string>Cancel</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Do not save anything and close this window</string>
+        </property>
+        <property name="text">
+         <string>&amp;Cancel</string>
+        </property>
+        <property name="shortcut">
+         <string>Esc</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="accessibleName">
+         <string>Save</string>
+        </property>
+        <property name="accessibleDescription">
+         <string>Save preset and close this window</string>
+        </property>
+        <property name="text">
+         <string>&amp;Save</string>
+        </property>
+        <property name="shortcut">
+         <string>Return</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

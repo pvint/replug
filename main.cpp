@@ -1,5 +1,5 @@
 /*
- * PLUG - software to operate Fender Mustang amplifier
+ * RePlug - software to operate Fender Mustang amplifier
  *        Linux replacement for Fender FUSE software
  *
  * Copyright (C) 2010  piorekf <piorekf@gmail.com>
@@ -22,9 +22,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QCoreApplication::setOrganizationName("piorekf");
-    QCoreApplication::setOrganizationDomain("piorekf.org");
-    QCoreApplication::setApplicationName("PLUG");
+    QCoreApplication::setOrganizationName("Paul J. Vint");
+    QCoreApplication::setOrganizationDomain("dotslash.ca");
+    QCoreApplication::setApplicationName("RePlug");
     MainWindow w;
     w.show();
 

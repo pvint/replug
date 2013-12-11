@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About PLUG</string>
+   <string>About RePlug</string>
   </property>
   <property name="accessibleName">
    <string>About window</string>
@@ -30,13 +30,13 @@
       </font>
      </property>
      <property name="accessibleName">
-      <string>PLUG</string>
+      <string>RePlug</string>
      </property>
      <property name="accessibleDescription">
       <string>Program's name</string>
      </property>
      <property name="text">
-      <string>PLUG</string>
+      <string>RePlug</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

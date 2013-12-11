@@ -154,12 +154,12 @@ void MainWindow::start_amp()
 
     if(name[0] == 0x00)
     {
-        setWindowTitle(QString(tr("PLUG: NONE")));
+        setWindowTitle(QString(tr("RePlug: NONE")));
         setAccessibleName(QString(tr("Main window: NONE")));
     }
     else
     {
-        setWindowTitle(QString(tr("PLUG: %1")).arg(name));
+        setWindowTitle(QString(tr("RePlug: %1")).arg(name));
         setAccessibleName(QString(tr("Main window: %1")).arg(name));
     }
 
@@ -246,7 +246,7 @@ void MainWindow::stop_amp()
         ui->action_Load_from_amplifier->setDisabled(true);
         ui->actionSave_effects->setDisabled(true);
         ui->action_Library_view->setDisabled(true);
-        setWindowTitle(QString(tr("PLUG")));
+        setWindowTitle(QString(tr("RePlug")));
         setAccessibleName(QString(tr("Main window: None")));
         ui->statusBar->showMessage(tr("Disconnected"), 5000);    // show message on the status bar
 
@@ -317,12 +317,12 @@ int MainWindow::save_on_amp(char *name, int slot)
 
     if(name[0] == 0x00)
     {
-        setWindowTitle(QString(tr("PLUG: NONE")));
+        setWindowTitle(QString(tr("RePlug: NONE")));
         setAccessibleName(QString(tr("Main window: NONE")));
     }
     else
     {
-        setWindowTitle(QString(tr("PLUG: %1")).arg(name));
+        setWindowTitle(QString(tr("RePlug: %1")).arg(name));
         setAccessibleName(QString(tr("Main window: %1")).arg(name));
     }
 
@@ -346,12 +346,12 @@ int MainWindow::load_from_amp(int slot)
 
     if(name[0] == 0x00)
     {
-        setWindowTitle(QString(tr("PLUG: NONE")));
+        setWindowTitle(QString(tr("RePlug: NONE")));
         setAccessibleName(QString(tr("Main window: NONE")));
     }
     else
     {
-        setWindowTitle(QString(tr("PLUG: %1")).arg(name));
+        setWindowTitle(QString(tr("RePlug: %1")).arg(name));
         setAccessibleName(QString(tr("Main window: %1")).arg(name));
     }
 
@@ -593,12 +593,12 @@ void MainWindow::change_title(QString name)
 
     if(current_name.isEmpty())
     {
-        setWindowTitle(QString(tr("PLUG: NONE")));
+        setWindowTitle(QString(tr("RePlug: NONE")));
         setAccessibleName(QString(tr("Main window: NONE")));
     }
     else
     {
-        setWindowTitle(QString(tr("PLUG: %1")).arg(current_name));
+        setWindowTitle(QString(tr("RePlug: %1")).arg(current_name));
         setAccessibleName(QString(tr("Main window: %1")).arg(name));
     }
 }

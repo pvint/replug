@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PLUG Library</string>
+   <string>RePlug Library</string>
   </property>
   <property name="accessibleName">
    <string>Library window</string>

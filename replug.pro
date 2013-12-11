@@ -6,7 +6,7 @@
 
 QT       += core gui network
 
-TARGET = plug
+TARGET = replug
 TEMPLATE = app
 
 

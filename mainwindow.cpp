@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connected = false;
 
     // connect buttons to slots
+    //
     connect(ui->Amplifier, SIGNAL(clicked()), amp, SLOT(show()));
     connect(ui->EffectButton1, SIGNAL(clicked()), effect1, SLOT(show()));
     connect(ui->EffectButton2, SIGNAL(clicked()), effect2, SLOT(show()));
@@ -68,6 +69,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->action_Default_effects, SIGNAL(triggered()), this, SLOT(show_default_effects()));
     connect(ui->action_Quick_presets, SIGNAL(triggered()), quickpres, SLOT(show()));
 
+
+   
     // shortcuts to activate effect windows
     QShortcut *showfx1 = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_1), this, 0, 0, Qt::ApplicationShortcut);
     QShortcut *showfx2 = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_2), this, 0, 0, Qt::ApplicationShortcut);
@@ -125,6 +128,85 @@ MainWindow::~MainWindow()
     settings.setValue("Windows/mainWindowState", saveState());
     delete amp_ops;    // stop the communication before exiting
     delete ui;
+}
+
+void MainWindow::load_from_amp()
+{
+    QSettings settings;
+    int x;
+    struct amp_settings amplifier_set;
+    struct fx_pedal_settings effects_set[4];
+    char name[32];
+
+    x = amp_ops->get_from_amp(names, name, &amplifier_set, effects_set);    // request initialization of communication
+
+    if(x != 0)    // if request succeded
+    {
+        if(x == -100)
+            ui->statusBar->showMessage(tr("Suitable device not found!"), 5000);
+        else
+            ui->statusBar->showMessage(QString(tr("Error: %1")).arg(x), 5000);
+        return;
+    }
+
+    load->load_names(names);
+    save->load_names(names);
+    quickpres->load_names(names);
+
+    if(name[0] == 0x00)
+    {
+        setWindowTitle(QString(tr("RePlug: NONE")));
+        setAccessibleName(QString(tr("Main window: NONE")));
+    }
+    else
+    {
+        setWindowTitle(QString(tr("RePlug: %1")).arg(name));
+        setAccessibleName(QString(tr("Main window: %1")).arg(name));
+    }
+
+    current_name = name;
+
+    amp->load(amplifier_set);
+    if(settings.value("Settings/popupChangedWindows").toBool())
+        amp->show();
+    for(int i = 0; i < 4; i++)
+    {
+        switch(effects_set[i].fx_slot)
+        {
+        case 0x00:
+        case 0x04:
+            effect1->load(effects_set[i]);
+            if(effects_set[i].effect_num)
+                if(settings.value("Settings/popupChangedWindows").toBool())
+                    effect1->show();
+            break;
+
+        case 0x01:
+        case 0x05:
+            effect2->load(effects_set[i]);
+            if(effects_set[i].effect_num)
+                if(settings.value("Settings/popupChangedWindows").toBool())
+                    effect2->show();
+            break;
+
+        case 0x02:
+        case 0x06:
+            effect3->load(effects_set[i]);
+            if(effects_set[i].effect_num)
+                if(settings.value("Settings/popupChangedWindows").toBool())
+                    effect3->show();
+            break;
+
+        case 0x03:
+        case 0x07:
+            effect4->load(effects_set[i]);
+            if(effects_set[i].effect_num)
+                if(settings.value("Settings/popupChangedWindows").toBool())
+                    effect4->show();
+            break;
+        }
+    }
+
 }
 
 void MainWindow::start_amp()
@@ -220,9 +302,25 @@ void MainWindow::start_amp()
     ui->action_Library_view->setDisabled(false);
     ui->statusBar->showMessage(tr("Connected"), 3000);    // show message on the status bar
 
+    // Timer for HID input from amp
+    /*
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(get_amp_hid()));
+    timer->start(20);
+    */
     connected = true;
 }
 
+/*
+void MainWindow::get_amp_hid()
+{
+	int g;
+	g = amp_ops->poll_amp_hid();
+	if (g < 0)
+		return;
+	//amp->update_gain(g);
+}
+*/
 void MainWindow::stop_amp()
 {
     int x;

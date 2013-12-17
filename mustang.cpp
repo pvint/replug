@@ -4,7 +4,7 @@ Mustang::Mustang()
 {
     amp_hand = NULL;
 
-    // "apply efect" command
+    // "apply effect" command
     memset(execute, 0x00, LENGTH);
     execute[0] = 0x1c;
     execute[1] = 0x03;
@@ -25,7 +25,7 @@ Mustang::~Mustang()
     this->stop_amp();
 }
 
-int Mustang::start_amp(char list[][32], char *name, struct amp_settings *amp_set, struct fx_pedal_settings *effects_set)
+int Mustang::get_from_amp(char list[][32], char *name, struct amp_settings *amp_set, struct fx_pedal_settings *effects_set)
 {
     int ret, recieved;
     unsigned char array[LENGTH];
@@ -113,6 +113,169 @@ int Mustang::start_amp(char list[][32], char *name, struct amp_settings *amp_set
     }
 
     return 0;
+}
+
+int Mustang::start_amp(char list[][32], char *name, struct amp_settings *amp_set, struct fx_pedal_settings *effects_set)
+{
+    int ret, recieved;
+    unsigned char array[LENGTH];
+    unsigned char recieved_data[296][LENGTH], data[7][LENGTH];
+    memset(recieved_data, 0x00, 296*LENGTH);
+
+    if(amp_hand == NULL)
+    {
+        // initialize libusb
+        ret = libusb_init(NULL);
+        if (ret)
+            return ret;
+
+        // get handle for the device
+        if((amp_hand = libusb_open_device_with_vid_pid(NULL, USB_VID, OLD_USB_PID)) == NULL)
+            if((amp_hand = libusb_open_device_with_vid_pid(NULL, USB_VID, NEW_USB_PID)) == NULL)
+            {
+		if((amp_hand = libusb_open_device_with_vid_pid(NULL, USB_VID, MINI_USB_PID)) == NULL)
+		{
+			libusb_exit(NULL);
+			return -100;
+		}
+            }
+
+        // detach kernel driver
+        ret = libusb_kernel_driver_active(amp_hand, 0);
+        if(ret)
+        {
+            ret = libusb_detach_kernel_driver(amp_hand, 0);
+            if(ret)
+            {
+                stop_amp();
+                return ret;
+            }
+        }
+
+        // claim the device
+       // ret = libusb_claim_interface(amp_hand, 0);
+        if(ret)
+        {
+            stop_amp();
+            return ret;
+        }
+    }
+
+    // initialization which is needed if you want
+    // to get any replies from the amp in the future
+    memset(array, 0x00, LENGTH);
+    array[1] = 0xc3;
+    libusb_interrupt_transfer(amp_hand, 0x01, array, LENGTH, &recieved, TMOUT);
+    libusb_interrupt_transfer(amp_hand, 0x81, array, LENGTH, &recieved, TMOUT);
+
+    memset(array, 0x00, LENGTH);
+    array[0] = 0x1a;
+    array[1] = 0x03;
+    libusb_interrupt_transfer(amp_hand, 0x01, array, LENGTH, &recieved, TMOUT);
+    libusb_interrupt_transfer(amp_hand, 0x81, array, LENGTH, &recieved, TMOUT);
+
+    if(list != NULL || name != NULL || amp_set != NULL || effects_set != NULL)
+    {
+        int i = 0, j = 0;
+        memset(array, 0x00, LENGTH);
+        array[0] = 0xff;
+        array[1] = 0xc1;
+        libusb_interrupt_transfer(amp_hand, 0x01, array, LENGTH, &recieved, TMOUT);
+
+        for(i = 0; recieved; i++)
+        {
+            libusb_interrupt_transfer(amp_hand, 0x81, array, LENGTH, &recieved, TMOUT);
+            memcpy(recieved_data[i], array, LENGTH);
+        }
+
+        int max_to_receive;
+        i > 143 ? max_to_receive = 200 : max_to_receive = 48;
+        if(list != NULL)
+            for(i = 0, j = 0; i<max_to_receive; i+=2, j++)
+                memcpy(list[j], recieved_data[i]+16, 32);
+
+        if(name != NULL || amp_set != NULL || effects_set != NULL)
+        {
+            for(j = 0; j < 7; i++, j++)
+                memcpy(data[j], recieved_data[i], LENGTH);
+            decode_data(data, name, amp_set, effects_set);
+        }
+    }
+
+    /*  HID cannot work while libusb has grab - keeping for reference 
+     *
+struct hid_device_info *devs, *cur_dev;
+	
+devs = hid_enumerate(0x1ed8, 0x10);
+cur_dev = devs;
+	while (cur_dev) {
+		fprintf(stderr, "Device Found\n  type: %04hx %04hx\n  path: %s\n  serial_number: %ls",
+			cur_dev->vendor_id, cur_dev->product_id, cur_dev->path, cur_dev->serial_number);
+		fprintf(stderr, "\n");
+		fprintf(stderr, "  Manufacturer: %ls\n", cur_dev->manufacturer_string);
+		fprintf(stderr, "  Product:      %ls\n", cur_dev->product_string);
+		fprintf(stderr, "\n");
+		cur_dev = cur_dev->next;
+	}
+	//hid_free_enumeration(devs);
+	//hid_hand = hid_open_path(cur_dev->path);
+//	hid_hand = hid_open(0x1ed8,0x10, NULL);
+    	// Set the hid_read() function to be non-blocking.
+//    	hid_set_nonblocking(hid_hand, 1);
+*/
+	return 0;
+}
+/*
+int Mustang::poll_amp_hid()
+{
+	unsigned char b[12];
+	int l, r, i;
+	unsigned char g[9] = { 0x05, 0x01, 0x02, 0x6d, 0x00, 0x01, 0x01, 0x0c, 0x00 };
+
+	r = libusb_bulk_transfer(amp_hand, LIBUSB_ENDPOINT_IN, b, sizeof(b), &l, 0);
+
+	if (r == 0)
+	{
+		for (i=0; i < 12; i++)
+		{
+			fprintf(stderr, "%02hhx ", b[i]);
+		}
+		fprintf(stderr, "\n");
+	}
+	return -1;
+}
+*/
+/*
+int Mustang::poll_amp_hid()
+{
+	// abort if we don't have grab if the HID device
+	if (hid_hand == NULL)
+		return -1;
+        int i;
+        int r;
+        unsigned char b[12];
+	unsigned char g[9] = { 0x05, 0x01, 0x02, 0x6d, 0x00, 0x01, 0x01, 0x0c, 0x00 };
+
+
+        r = hid_read(hid_hand, b, 12);
+
+	if (r > 0)
+	{
+	
+		// BFI method of adjusting gain FIXME
+		// 05 01 02 6d 00 01 01 0c 00 98 98 00
+		if (!memcmp(b, g, 9))
+		{
+			fprintf(stderr, "Gain\n");
+		}
+		return b[10];
+	}
+	return -1;
+}
+*/
+int Mustang::poll_amp_input()
+{
+
 }
 
 int Mustang::stop_amp()

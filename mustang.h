@@ -60,12 +60,30 @@
 #define SAVE_SLOT 4
 #define FXKNOB 3
 
+// HID Stuff
+// Byte 6 of HID data from amp defines the knob
+#define GAIN_KNOB 0x01
+#define VOLUME_KNOB 0x00
+#define TREBLE_KNOB 0x04
+
+// HID raw data:
+// Gain:
+// 05 01 02 6d  00 01 01 0c  00 23 23 00 
+// Volume:
+// 05 01 02 6d  00 00 00 0c  00 17 17 00
+// Treble:
+// 05 01 02 6d  00 04 04 0c  00 3e 3e 00
+// Amp Model/Preset:
+// More complicated... multi-packet.... TODO
+
+
 class Mustang
 {
 public:
     Mustang();
     ~Mustang();
     int start_amp(char list[][32]=NULL, char *name=NULL, struct amp_settings *amp_set=NULL, struct fx_pedal_settings *effects_set=NULL);    // initialize communication
+    int get_from_amp(char list[][32]=NULL, char *name=NULL, struct amp_settings *amp_set=NULL, struct fx_pedal_settings *effects_set=NULL);    // get settings from amp
     int stop_amp(void);    // terminate communication
     int set_effect(struct fx_pedal_settings);
     int set_amplifier(struct amp_settings);
@@ -73,6 +91,7 @@ public:
     int load_memory_bank(int, char *name=NULL, struct amp_settings *amp_set=NULL, struct fx_pedal_settings *effects_set=NULL);
     int save_effects(int , char *, int , struct fx_pedal_settings *);
     int update(char *);
+    int poll_amp_input(void);
 
 private:
     libusb_device_handle *amp_hand;    // handle for USB communication

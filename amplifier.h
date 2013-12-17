@@ -30,6 +30,7 @@ private:
 public slots:
     // set basic variables
     void set_gain(int);
+    void update_gain(int);
     void set_volume(int);
     void set_treble(int);
     void set_middle(int);
@@ -55,6 +56,9 @@ public slots:
     void load(struct amp_settings);
     void get_settings(struct amp_settings*);
     void enable_set_button(bool);
+
+    // get input from amplifier
+    void get_amp_hid(void);
 };
 
 #endif // AMPLIFIER_H

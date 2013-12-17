@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QFileDialog>
+#include <QTimer>
 #include "effect.h"
 #include "amplifier.h"
 #include "mustang.h"
@@ -43,6 +44,7 @@ public:
 public slots:
     void start_amp(void);    // initialize the communication
     void stop_amp(void);    // terminate communication
+    void load_from_amp(void);	// get settings from amp
     int set_effect(struct fx_pedal_settings);
     int set_amplifier(struct amp_settings);
     int save_on_amp(char *, int);
@@ -56,6 +58,7 @@ public slots:
     void change_title(QString);
     void update_firmware();
     void empty_other(int, Effect*);
+
 
 private:
     Ui::MainWindow *ui;

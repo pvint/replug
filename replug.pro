@@ -66,3 +66,4 @@ LIBS += -lusb-1.0
 
 OTHER_FILES += \
     style.qss
+

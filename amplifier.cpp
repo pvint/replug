@@ -46,6 +46,8 @@ Amplifier::Amplifier(QWidget *parent) :
     connect(ui->dial_5, SIGNAL(valueChanged(int)), this, SLOT(set_bass(int)));
     connect(ui->setButton, SIGNAL(clicked()), this, SLOT(send_amp()));
 
+
+
     QShortcut *close = new QShortcut(QKeySequence(Qt::Key_Escape), this);
     connect(close, SIGNAL(activated()), this, SLOT(close()));
 }
@@ -57,34 +59,49 @@ Amplifier::~Amplifier()
     delete ui;
 }
 
+void Amplifier::get_amp_hid()
+{
+	fprintf(stderr,"Z");
+}
+
+void Amplifier::update_gain(int value)
+{
+	ui->dial->setValue(value);
+}
+
 void Amplifier::set_gain(int value)
 {
     gain = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_volume(int value)
 {
     volume = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_treble(int value)
 {
     treble = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_middle(int value)
 {
     middle = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_bass(int value)
 {
     bass = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_cabinet(int value)
@@ -97,60 +114,70 @@ void Amplifier::set_noise_gate(int value)
 {
     noise_gate = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_presence(int value)
 {
     presence = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_gain2(int value)
 {
     gain2 = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_master_vol(int value)
 {
     master_vol = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_threshold(int value)
 {
     threshold = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_depth(int value)
 {
     depth = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_bias(int value)
 {
     bias = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_sag(int value)
 {
     sag = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_brightness(bool value)
 {
     brightness = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::set_usb_gain(int value)
 {
     usb_gain = value;
     changed = true;
+    send_amp();
 }
 
 void Amplifier::choose_amp(int value)
@@ -254,7 +281,6 @@ void Amplifier::choose_amp(int value)
 void Amplifier::send_amp()
 {
     struct amp_settings settings;
-
     if(!changed)
         return;
     changed = false;

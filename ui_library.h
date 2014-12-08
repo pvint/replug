@@ -166,7 +166,7 @@ public:
 
     void retranslateUi(QDialog *Library)
     {
-        Library->setWindowTitle(QApplication::translate("Library", "PLUG Library", 0, QApplication::UnicodeUTF8));
+        Library->setWindowTitle(QApplication::translate("Library", "RePlug Library", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_ACCESSIBILITY
         Library->setAccessibleName(QApplication::translate("Library", "Library window", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY

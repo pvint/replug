@@ -51,6 +51,7 @@ public:
     QPushButton *EffectButton2;
     QPushButton *EffectButton3;
     QPushButton *EffectButton4;
+    QPushButton *testButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -160,6 +161,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        testButton = new QPushButton(centralWidget);
+        testButton->setObjectName(QString::fromUtf8("testButton"));
+
+        verticalLayout->addWidget(testButton);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -209,7 +215,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "PLUG", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "RePlug", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_ACCESSIBILITY
         MainWindow->setAccessibleName(QApplication::translate("MainWindow", "Main window: NONE", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
@@ -284,6 +290,7 @@ public:
         EffectButton4->setAccessibleDescription(QApplication::translate("MainWindow", "This button opens window to set effect 4", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
         EffectButton4->setText(QApplication::translate("MainWindow", "Effect &4", 0, QApplication::UnicodeUTF8));
+        testButton->setText(QApplication::translate("MainWindow", "PushButton", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_ACCESSIBILITY
         menuBar->setAccessibleName(QApplication::translate("MainWindow", "Menu bar", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY

@@ -22,7 +22,7 @@ static const uint qt_meta_data_Amplifier[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,41 +32,44 @@ static const uint qt_meta_data_Amplifier[] = {
  // slots: signature, parameters, type, tag, flags
       11,   10,   10,   10, 0x0a,
       25,   10,   10,   10, 0x0a,
-      41,   10,   10,   10, 0x0a,
-      57,   10,   10,   10, 0x0a,
-      73,   10,   10,   10, 0x0a,
-      87,   10,   10,   10, 0x0a,
-     103,   10,   10,   10, 0x0a,
+      42,   10,   10,   10, 0x0a,
+      58,   10,   10,   10, 0x0a,
+      74,   10,   10,   10, 0x0a,
+      90,   10,   10,   10, 0x0a,
+     104,   10,   10,   10, 0x0a,
      120,   10,   10,   10, 0x0a,
-     140,   10,   10,   10, 0x0a,
-     158,   10,   10,   10, 0x0a,
-     173,   10,   10,   10, 0x0a,
-     193,   10,   10,   10, 0x0a,
-     212,   10,   10,   10, 0x0a,
-     227,   10,   10,   10, 0x0a,
-     241,   10,   10,   10, 0x0a,
-     254,   10,   10,   10, 0x0a,
-     275,   10,   10,   10, 0x0a,
-     293,   10,   10,   10, 0x0a,
-     304,   10,   10,   10, 0x0a,
-     323,   10,   10,   10, 0x0a,
-     351,   10,   10,   10, 0x0a,
+     137,   10,   10,   10, 0x0a,
+     157,   10,   10,   10, 0x0a,
+     175,   10,   10,   10, 0x0a,
+     190,   10,   10,   10, 0x0a,
+     210,   10,   10,   10, 0x0a,
+     229,   10,   10,   10, 0x0a,
+     244,   10,   10,   10, 0x0a,
+     258,   10,   10,   10, 0x0a,
+     271,   10,   10,   10, 0x0a,
+     292,   10,   10,   10, 0x0a,
+     310,   10,   10,   10, 0x0a,
+     321,   10,   10,   10, 0x0a,
+     340,   10,   10,   10, 0x0a,
+     368,   10,   10,   10, 0x0a,
+     392,   10,   10,   10, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Amplifier[] = {
-    "Amplifier\0\0set_gain(int)\0set_volume(int)\0"
-    "set_treble(int)\0set_middle(int)\0"
-    "set_bass(int)\0choose_amp(int)\0"
-    "set_cabinet(int)\0set_noise_gate(int)\0"
-    "set_presence(int)\0set_gain2(int)\0"
-    "set_master_vol(int)\0set_threshold(int)\0"
-    "set_depth(int)\0set_bias(int)\0set_sag(int)\0"
+    "Amplifier\0\0set_gain(int)\0update_gain(int)\0"
+    "set_volume(int)\0set_treble(int)\0"
+    "set_middle(int)\0set_bass(int)\0"
+    "choose_amp(int)\0set_cabinet(int)\0"
+    "set_noise_gate(int)\0set_presence(int)\0"
+    "set_gain2(int)\0set_master_vol(int)\0"
+    "set_threshold(int)\0set_depth(int)\0"
+    "set_bias(int)\0set_sag(int)\0"
     "set_brightness(bool)\0set_usb_gain(int)\0"
     "send_amp()\0load(amp_settings)\0"
     "get_settings(amp_settings*)\0"
-    "enable_set_button(bool)\0"
+    "enable_set_button(bool)\0get_amp_hid()\0"
 };
 
 void Amplifier::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -76,26 +79,28 @@ void Amplifier::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         Amplifier *_t = static_cast<Amplifier *>(_o);
         switch (_id) {
         case 0: _t->set_gain((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->set_volume((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->set_treble((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->set_middle((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->set_bass((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->choose_amp((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: _t->set_cabinet((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->set_noise_gate((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->set_presence((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 9: _t->set_gain2((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 10: _t->set_master_vol((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->set_threshold((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->set_depth((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->set_bias((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->set_sag((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->set_brightness((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 16: _t->set_usb_gain((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->send_amp(); break;
-        case 18: _t->load((*reinterpret_cast< amp_settings(*)>(_a[1]))); break;
-        case 19: _t->get_settings((*reinterpret_cast< amp_settings*(*)>(_a[1]))); break;
-        case 20: _t->enable_set_button((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 1: _t->update_gain((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->set_volume((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->set_treble((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->set_middle((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->set_bass((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->choose_amp((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->set_cabinet((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->set_noise_gate((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->set_presence((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->set_gain2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->set_master_vol((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->set_threshold((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->set_depth((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->set_bias((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->set_sag((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->set_brightness((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 17: _t->set_usb_gain((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->send_amp(); break;
+        case 19: _t->load((*reinterpret_cast< amp_settings(*)>(_a[1]))); break;
+        case 20: _t->get_settings((*reinterpret_cast< amp_settings*(*)>(_a[1]))); break;
+        case 21: _t->enable_set_button((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 22: _t->get_amp_hid(); break;
         default: ;
         }
     }
@@ -133,9 +138,9 @@ int Amplifier::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 23;
     }
     return _id;
 }

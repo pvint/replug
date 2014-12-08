@@ -1,7 +1,8 @@
-- Update amp in real time when settings changed {DONE - Dec. 12, 2013}
+- Update amp in real time when settings changed {PART DONE - Dec. 12, 2013}
 - Have interface update when knobs are turned on amp (realtime)
 - Enable device for recording/routing via JACK (a la alsa_in)
 - Get rid of dialogs and condense to a single window
 - Save amp & effect settings as simple file
 - Ability to have settings change via MIDI
 - Make the interface look cooler
+- Get settings from amp on amp type change

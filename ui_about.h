@@ -134,7 +134,7 @@ public:
 
     void retranslateUi(QDialog *About)
     {
-        About->setWindowTitle(QApplication::translate("About", "About PLUG", 0, QApplication::UnicodeUTF8));
+        About->setWindowTitle(QApplication::translate("About", "About RePlug", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_ACCESSIBILITY
         About->setAccessibleName(QApplication::translate("About", "About window", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
@@ -142,12 +142,12 @@ public:
         About->setAccessibleDescription(QApplication::translate("About", "Provides information about program's version and author", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
 #ifndef QT_NO_ACCESSIBILITY
-        label->setAccessibleName(QApplication::translate("About", "PLUG", 0, QApplication::UnicodeUTF8));
+        label->setAccessibleName(QApplication::translate("About", "RePlug", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
 #ifndef QT_NO_ACCESSIBILITY
         label->setAccessibleDescription(QApplication::translate("About", "Program's name", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY
-        label->setText(QApplication::translate("About", "PLUG", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("About", "RePlug", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_ACCESSIBILITY
         label_6->setAccessibleName(QApplication::translate("About", "Version 1.0.999", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_ACCESSIBILITY

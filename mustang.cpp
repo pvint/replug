@@ -122,7 +122,7 @@ int Mustang::start_amp(char list[][32], char *name, struct amp_settings *amp_set
     unsigned char recieved_data[296][LENGTH], data[7][LENGTH];
     memset(recieved_data, 0x00, 296*LENGTH);
 
-    struct libusb_transfer *usb_data;
+    // HID TEST struct libusb_transfer *usb_data;
 
     if(amp_hand == NULL)
     {
@@ -205,10 +205,10 @@ int Mustang::start_amp(char list[][32], char *name, struct amp_settings *amp_set
     }
 
     // Initialize asynchronous reading from amp
-    	unsigned char buf[24];
+    //  HID STUFF	unsigned char buf[24];
 
-	libusb_alloc_transfer(0);	
-	libusb_fill_interrupt_transfer(usb_data, amp_hand, ( 1 | LIBUSB_ENDPOINT_IN ), buf, sizeof(buf), amp_in_cb, NULL, 0);
+	//libusb_alloc_transfer(0);	
+	//libusb_fill_interrupt_transfer(usb_data, amp_hand, ( 1 | LIBUSB_ENDPOINT_IN ), buf, sizeof(buf), amp_in_cb, NULL, 0);
 
     /*  HID cannot work while libusb has grab - keeping for reference 
      *
@@ -234,8 +234,8 @@ cur_dev = devs;
 	return 0;
 }
 
-
-libusb_transfer_cb_fn amp_in_cb(libusb_transfer *transfer)
+/* HID STUFF
+void libusb_transfer_cb_fn amp_in_cb(libusb_transfer *transfer)
     {
     if(transfer->status != LIBUSB_TRANSFER_COMPLETED)
     {
@@ -249,11 +249,11 @@ libusb_transfer_cb_fn amp_in_cb(libusb_transfer *transfer)
     }
     if (libusb_submit_transfer(transfer) < 0){
     fprintf(stderr,"could not resubmit irq \n");
-    exit(1);
+    //exit(1);
     }
      
 }
-
+*/
 /*
 int Mustang::poll_amp_hid()
 {

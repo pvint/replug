@@ -84,7 +84,7 @@ public:
 
         comboBox = new QComboBox(centralwidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setMinimumSize(QSize(100, 0));
+        comboBox->setMinimumSize(QSize(200, 0));
         comboBox->setMaxVisibleItems(15);
 
         horizontalLayout_3->addWidget(comboBox);
